@@ -681,7 +681,18 @@ let meta = { texture:null, density:null, porosity:null };
 let damageLevel = 0;
 let isStraight = false;
 
+/* ---------------- Яндекс Метрика: цели ---------------- */
+function trackGoal(goal, params){
+  try{
+    if(typeof ym === 'function'){
+      if(params){ ym(113429859, 'reachGoal', goal, params); }
+      else { ym(113429859, 'reachGoal', goal); }
+    }
+  }catch(e){}
+}
+
 function startQuiz(){
+  trackGoal('quiz_start');
   currentIndex = 0;
   history = [];
   scores = { shape:0, tight:0 };
@@ -973,6 +984,7 @@ function showResult(){
     document.getElementById('result-badge').textContent = c.badge;
     document.getElementById('result-title').textContent = c.title;
     document.getElementById('result-desc').textContent = c.desc;
+    trackGoal('quiz_complete', {curl_type: '1'});
     return;
   }
 
@@ -988,6 +1000,7 @@ function showResult(){
   const dmg = damageContent[damageLevel];
   damageBadgeEl.textContent = dmg.label;
   damageBadgeEl.classList.add('dmg-' + damageLevel);
+  trackGoal('quiz_complete', {curl_type: type, damage: dmg.label});
 
   const altGroup = transitionalGroup(scores.shape);
   const altLetter = transitionalLetter(scores.tight);
@@ -1007,6 +1020,10 @@ function showResult(){
       a.href = product.url;
       a.target = '_blank';
       a.rel = 'noopener';
+      a.addEventListener('click', function(){
+        trackGoal('product_click', {product: product.name, curl_type: type});
+        trackGoal('result_link_click');
+      });
       a.innerHTML =
         '<span class="product-img-link"><img class="product-img" src="'+product.img+'" alt="'+product.name+'"></span>' +
         '<span class="product-info">' +
