@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROКУДРИ — тест на тип завитка</title>
+<title>PROКУДРИ - тест на тип завитка</title>
 <style>
 @font-face{
   font-family:'AGOptCyrillic';
@@ -32,7 +32,7 @@
   --ink-muted: #8A736C;
   --cream: #FFF8F3;
   --line: rgba(43,35,32,0.10);
-  --line-result: rgba(255,248,243,0.22);
+  --line-result: rgba(43,35,32,0.14);
 
   --font-display: 'AGOptCyrillic', 'Times New Roman', serif;
   --font-script: 'Gogol', cursive;
@@ -132,8 +132,8 @@ body{
   transition: background 0.3s ease;
 }
 .card.result-mode{
-  background: var(--card-result-bg);
-  color: var(--cream);
+  background: var(--card-bg);
+  color: var(--ink);
 }
 
 @media (max-width: 480px){
@@ -151,8 +151,8 @@ h1{
 }
 
 h2{
-  font-family: var(--font-body);
-  font-weight:600;
+  font-family: var(--font-display);
+  font-weight:400;
   font-size: 21px;
   line-height:1.4;
   margin-bottom: 22px;
@@ -198,7 +198,8 @@ p.slogan{
   color: var(--ink);
   border-radius: 14px;
   padding: 15px 18px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: 15px;
   cursor:pointer;
   transition: all 0.15s ease;
@@ -218,8 +219,8 @@ p.slogan{
   border:none;
   border-radius: 999px;
   padding: 14px 28px;
-  font-family: var(--font-body);
-  font-weight:600;
+  font-family: var(--font-display);
+  font-weight:400;
   font-size: 15px;
   cursor:pointer;
   transition: transform 0.15s ease, filter 0.15s ease;
@@ -228,10 +229,10 @@ p.slogan{
 
 .btn-ghost{
   background: transparent;
-  color: var(--cream);
+  color: var(--ink);
   border: 1px solid var(--line-result);
 }
-.btn-ghost:hover{ background: rgba(255,248,243,0.08); }
+.btn-ghost:hover{ background: rgba(43,35,32,0.05); }
 
 .footer-row{
   display:flex;
@@ -241,7 +242,8 @@ p.slogan{
 }
 
 .back-link{
-  font-family: var(--font-body);
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: 13px;
   color: var(--ink-muted);
   background:none;
@@ -251,11 +253,62 @@ p.slogan{
 .back-link:hover{ color: var(--ink); }
 
 /* ---------------- result screen ---------------- */
+.promo{
+  text-align: center;
+  background: var(--pink);
+  border-radius: 18px;
+  padding: 20px 16px 18px;
+  margin-bottom: 26px;
+  color: var(--ink);
+}
+.promo-text{
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.promo-num{
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--card-result-bg);
+}
+.promo-code{
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  color: var(--card-result-bg);
+  background: rgba(255,255,255,0.65);
+  border-radius: 10px;
+  padding: 2px 12px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+.promo-gift{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--card-result-bg);
+  border-radius: 999px;
+  padding: 7px 18px;
+}
+.promo-gift svg{ flex-shrink: 0; }
+
 .type-badge{
   display:inline-block;
   font-family: var(--font-display);
   font-size: 16px;
-  color: var(--gold);
+  color: var(--gold-deep);
   border: 1px solid var(--gold);
   border-radius: 999px;
   padding: 6px 18px;
@@ -267,17 +320,17 @@ p.slogan{
   font-family: var(--font-utility);
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: var(--cream);
-  background: rgba(255,248,243,0.12);
+  color: var(--ink);
+  background: rgba(43,35,32,0.06);
   border-radius: 999px;
   padding: 6px 16px;
   margin-bottom: 18px;
   margin-left: 8px;
 }
-.damage-badge.dmg-0{ background: rgba(200,230,190,0.22); }
-.damage-badge.dmg-1{ background: rgba(252,225,196,0.22); }
-.damage-badge.dmg-2{ background: rgba(253,217,203,0.28); }
-.damage-badge.dmg-3{ background: rgba(240,140,140,0.28); }
+.damage-badge.dmg-0{ background: #E2EEDA; }
+.damage-badge.dmg-1{ background: #FCE1C4; }
+.damage-badge.dmg-2{ background: #FDD9CB; }
+.damage-badge.dmg-3{ background: #F5B1C8; }
 
 .result-title{
   font-family: var(--font-display);
@@ -285,11 +338,11 @@ p.slogan{
   font-size: 34px;
   line-height:1.2;
   margin-bottom: 14px;
-  color: var(--cream);
+  color: var(--ink);
 }
 
 .result-desc{
-  color: rgba(255,248,243,0.82);
+  color: var(--ink-muted);
   font-size: 15px;
   line-height:1.65;
   margin-bottom: 22px;
@@ -297,8 +350,8 @@ p.slogan{
 
 .transitional-note{
   font-size: 13.5px;
-  color: var(--cream);
-  background: rgba(255,248,243,0.1);
+  color: var(--ink);
+  background: var(--pink-soft);
   border: 1px solid var(--line-result);
   border-radius: 12px;
   padding: 13px 15px;
@@ -349,14 +402,14 @@ p.slogan{
   display:flex;
   gap: 14px;
   align-items:center;
-  background: rgba(255,248,243,0.08);
+  background: rgba(251,226,232,0.45);
   border: 1px solid var(--line-result);
   border-radius: 16px;
   padding: 14px;
   text-decoration:none;
   transition: background 0.15s ease, transform 0.15s ease;
 }
-.product-card:hover{ background: rgba(255,248,243,0.14); transform: translateY(-1px); }
+.product-card:hover{ background: rgba(251,226,232,0.9); transform: translateY(-1px); }
 
 .product-img-link{ flex-shrink:0; display:block; }
 .product-img{
@@ -380,28 +433,28 @@ p.slogan{
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-deep);
 }
 
 .product-name{
   font-family: var(--font-body);
   font-weight:600;
   font-size: 14.5px;
-  color: var(--cream);
+  color: var(--ink);
   line-height:1.3;
 }
 
 .product-price{
   font-family: var(--font-utility);
   font-size: 13px;
-  color: rgba(255,248,243,0.75);
+  color: var(--ink-muted);
 }
 
 .product-cta{
-  font-family: var(--font-body);
-  font-weight:600;
+  font-family: var(--font-display);
+  font-weight:400;
   font-size: 13px;
-  color: var(--gold);
+  color: var(--gold-deep);
 }
 
 .hidden{ display:none !important; }
@@ -463,9 +516,9 @@ p.slogan{
     <!-- INTRO -->
     <div id="screen-intro">
       <h1>Какой у вас тип завитка?</h1>
-      <p class="lede">8 коротких вопросов — и вы узнаете свой тип по шкале 2A–4C, плюс персональные советы по уходу от PROКУДРИ. Отвечайте по волосам, высохшим естественным путем, без укладки.</p>
+      <p class="lede">8 коротких вопросов - и вы узнаете свой тип по шкале 2A–4C, плюс персональные советы по уходу от PROКУДРИ. Отвечайте по волосам, высохшим естественным путем, без укладки.</p>
       <button class="btn" onclick="startQuiz()">Начать тест →</button>
-      <p class="slogan">Кудрявые — не такие как все!</p>
+      <p class="slogan">Кудрявые - не такие как все!</p>
     </div>
 
     <!-- QUESTION -->
@@ -481,6 +534,13 @@ p.slogan{
 
     <!-- RESULT -->
     <div id="screen-result" class="hidden">
+      <div class="promo">
+        <div class="promo-text">Промокод на скидку <span class="promo-num">20%</span> на сайте <span class="promo-code">TEST20</span></div>
+        <div class="promo-gift">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8"/><path d="M12 8c-2.5 0-4-1-4-2.5S9 3 10.5 3C12 3 12 5 12 8zM12 8c2.5 0 4-1 4-2.5S15 3 13.5 3C12 3 12 5 12 8z"/></svg>
+          Подарок к вашему заказу
+        </div>
+      </div>
       <div class="type-badge" id="result-badge"></div>
       <span class="damage-badge" id="damage-badge"></span>
       <div class="result-title" id="result-title"></div>
@@ -515,18 +575,18 @@ const questions = [
     text:'Как выглядят волосы, когда высохнут естественным путем, без укладки?',
     options:[
       {label:'Прямые, без изгиба', shape:0, terminal:'straight'},
-      {label:'Волнистые — мягкая S-волна', shape:3},
-      {label:'Кудрявые — чёткие спирали', shape:6},
-      {label:'Очень кудрявые — плотные зигзаги или пружинки', shape:9}
+      {label:'Волнистые - мягкая S-волна', shape:3},
+      {label:'Кудрявые - чёткие спирали', shape:6},
+      {label:'Очень кудрявые - плотные зигзаги или пружинки', shape:9}
     ]
   },
   {
     id:'diameter',
     text:'Какой примерный диаметр одного завитка?',
     options:[
-      {label:'Крупный — с палец', tight:2},
-      {label:'Средний — с карандаш', tight:5},
-      {label:'Мелкий — с соломинку', tight:8},
+      {label:'Крупный - с палец', tight:2},
+      {label:'Средний - с карандаш', tight:5},
+      {label:'Мелкий - с соломинку', tight:8},
       {label:'Очень мелкий, рисунок почти не виден', tight:10}
     ]
   },
@@ -541,11 +601,11 @@ const questions = [
   },
   {
     id:'density',
-    text:'Сколько волос на голове — какая густота?',
+    text:'Сколько волос на голове - какая густота?',
     options:[
-      {label:'Редкие — кожа головы легко просматривается', density:'sparse'},
+      {label:'Редкие - кожа головы легко просматривается', density:'sparse'},
       {label:'Средние', density:'medium'},
-      {label:'Густые — сложно разобрать отдельные пряди', density:'thick'}
+      {label:'Густые - сложно разобрать отдельные пряди', density:'thick'}
     ]
   },
   {
@@ -578,7 +638,7 @@ const questions = [
   },
   {
     id:'elasticity',
-    text:'Растяните влажную прядь двумя пальцами — что происходит?',
+    text:'Растяните влажную прядь двумя пальцами - что происходит?',
     options:[
       {label:'Растягивается и пружинит обратно', tight:0},
       {label:'Растягивается слабо, медленно возвращается', tight:1},
@@ -587,7 +647,7 @@ const questions = [
   },
   {
     id:'damage',
-    text:'Оцените текущее состояние волос — учитывайте окрашивание, осветление, био- и химическую завивку.',
+    text:'Оцените текущее состояние волос - учитывайте окрашивание, осветление, био- и химическую завивку.',
     options:[
       {label:'Без окрашивания и завивки, кончики не секутся', damage:0},
       {label:'Есть тонирование или окрашивание в близкий к натуральному оттенок, волосы в целом эластичные', damage:1},
@@ -710,17 +770,17 @@ const typeContent = {
   straight: {
     badge: 'ТИП 1',
     title: 'Прямые волосы',
-    desc: 'У вас прямые волосы без выраженного изгиба по всей длине — этот тест рассчитан на волнистые, кудрявые и афро-типы, поэтому шкала 2A–4C здесь не применяется.'
+    desc: 'У вас прямые волосы без выраженного изгиба по всей длине - этот тест рассчитан на волнистые, кудрявые и афро-типы, поэтому шкала 2A–4C здесь не применяется.'
   },
   '2A': { badge:'2A', title:'Едва заметная волна', desc:'Лёгкая, почти невесомая S-волна, в основном ближе к кончикам. Волосы легко поддаются как выпрямлению, так и лёгкой завивке.' },
   '2B': { badge:'2B', title:'Чёткая волна', desc:'Выраженная S-волна начинается примерно от середины длины. Прикорневая зона обычно более прямая, склонна немного лосниться у корней.' },
   '2C': { badge:'2C', title:'Плотная волна', desc:'Волна плотная и начинается почти от корней, местами переходит в рыхлый локон. Из всех волнистых типов сильнее всего склонна к пушистости.' },
   '3A': { badge:'3A', title:'Крупный локон', desc:'Упругие, блестящие локоны диаметром с маркер или крупнее. Держат форму, но легко теряют чёткость завитка от трения и сухости.' },
   '3B': { badge:'3B', title:'Пружинка среднего диаметра', desc:'Плотные, упругие спирали диаметром с карандаш. Заметный объём, волосы быстро теряют влагу и склонны к сухости на кончиках.' },
-  '3C': { badge:'3C', title:'Мелкая тугая спираль', desc:'Плотно закрученные пружинки диаметром с соломинку, растут очень плотно друг к другу — отсюда выраженный объём и склонность к спутыванию.' },
+  '3C': { badge:'3C', title:'Мелкая тугая спираль', desc:'Плотно закрученные пружинки диаметром с соломинку, растут очень плотно друг к другу - отсюда выраженный объём и склонность к спутыванию.' },
   '4A': { badge:'4A', title:'Чёткая мелкая пружинка', desc:'Плотный S-образный завиток, который хорошо виден и держит форму во влажном состоянии, но сильно сжимается в объёме при высыхании.' },
   '4B': { badge:'4B', title:'Зигзагообразный узор', desc:'Волосы растут под более выраженным углом, узор скорее зигзагообразный, чем спиральный. Менее эластичны, требуют особенно бережного обращения.' },
-  '4C': { badge:'4C', title:'Плотный узор без чёткого завитка', desc:'Самый плотный узор с минимальной видимой спиралью и сильнейшей усадкой при высыхании — реальная длина часто заметно больше видимой.' }
+  '4C': { badge:'4C', title:'Плотный узор без чёткого завитка', desc:'Самый плотный узор с минимальной видимой спиралью и сильнейшей усадкой при высыхании - реальная длина часто заметно больше видимой.' }
 };
 
 const damageContent = {
@@ -736,13 +796,13 @@ const damageContent = {
   },
   2: {
     label: 'Средняя степень повреждения',
-    desc: 'Есть заметная сухость, ломкость или повышенная пористость — следствие осветления, стойкого окрашивания или завивки.',
+    desc: 'Есть заметная сухость, ломкость или повышенная пористость - следствие осветления, стойкого окрашивания или завивки.',
     tip: 'Используйте интенсивный уход для восстановления волос с аминокислотами: маска на еженедельной основе и несмываемое молочко на ежедневной основе.'
   },
   3: {
     label: 'Сильная степень повреждения',
     desc: 'Волосы ослаблены многократным осветлением или химическим воздействием, высок риск ломкости и посечения.',
-    tip: 'При сильной степени повреждения лучше всего работает молекулярная сыворотка, которая восстанавливает волосы на уровне молекул и заполняет пустоты в волосе — наносите регулярно. В совокупности с линейкой для волос с аминокислотами волосы быстро начнут восстанавливать свою структуру.'
+    tip: 'При сильной степени повреждения лучше всего работает молекулярная сыворотка, которая восстанавливает волосы на уровне молекул и заполняет пустоты в волосе - наносите регулярно. В совокупности с линейкой для волос с аминокислотами волосы быстро начнут восстанавливать свою структуру.'
   }
 };
 
@@ -831,7 +891,7 @@ const productByType = {
 function porosityTip(p){
   if(p==='high') return 'Пористость повышенная: волосы быстро впитывают и быстро теряют влагу. После увлажнения обязательно «запечатывайте» её молочком или кремом, добавляйте в уход составы с протеинами и не злоупотребляйте горячим воздухом.';
   if(p==='low') return 'Пористость в норме: кутикула плотно закрыта, влага и продукты впитываются медленно. Используйте лёгкие водные формулы, наносите уход на влажные волосы и не перегружайте волосы тяжёлыми составами.';
-  return 'Пористость в норме: достаточно стандартной схемы — увлажняющий шампунь, кондиционер и лёгкий несмываемый уход без утяжеления.';
+  return 'Пористость в норме: достаточно стандартной схемы - увлажняющий шампунь, кондиционер и лёгкий несмываемый уход без утяжеления.';
 }
 
 
@@ -919,7 +979,7 @@ function showResult(){
     const alts = [];
     if(altGroup) alts.push(altGroup + letter);
     if(altLetter) alts.push(group + altLetter);
-    noteEl.textContent = 'Похоже, у вас переходный тип — также встречаются черты ' + alts.join(' и ') + '.';
+    noteEl.textContent = 'Похоже, у вас переходный тип - также встречаются черты ' + alts.join(' и ') + '.';
     noteEl.classList.remove('hidden');
   }
 
